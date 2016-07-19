@@ -5,29 +5,7 @@ import { ShoppingListEditComponent } from './shopping-list-edit.component';
 
 @Component({
     selector: 'shopping-list',
-    template: `
-        <header>
-            <div class="brand">
-                Shopping List
-            </div>
-        </header>
-        <div class="main">
-            <section>
-                <shopping-list-add (addRequest)="addShoppingItem($event)"></shopping-list-add>
-            </section>
-            <section>
-                <h3>My Shopping Items</h3>
-                <ul class="list">
-                    <li *ngFor="let item of listItems">
-                        {{ item.name }} ({{ item.amount }})
-                    </li>
-                </ul>
-            </section>
-            <section>
-                <shopping-list-edit></shopping-list-edit>
-            </section>
-        </div>
-    `,
+    templateUrl: './app/shopping-list/shopping-list.component.html',
     directives: [ ShoppingListAddComponent, ShoppingListEditComponent ],
     inputs: [ 'addRequest' ]
 })

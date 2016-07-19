@@ -1,3 +1,33 @@
-<h1>
-  {{title}}
-</h1>
+<header class="navbar" >
+
+    <div class="container">
+
+        <div class="navbar-header">
+
+            <a class="navbar-brand">Experiments</a> 
+            
+        </div>
+
+        <ul class="nav navbar-nav">
+
+            <li> 
+                
+                <a [routerLink]="['/shopping-list']">Shopping List</a> 
+                
+            </li>
+
+        </ul>        
+
+    </div>
+
+</header>
+
+<div class="row">
+
+    <div class="container">
+
+        <router-outlet></router-outlet>
+
+    </div>
+
+</div>
