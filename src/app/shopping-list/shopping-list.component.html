@@ -16,15 +16,17 @@
 
         <h3>My Shopping Items</h3>
 
-        <ul class="list-group">
+        <div class="list-group">
 
-            <li *ngFor="let item of listItems" class="list-group-item">
+            <a *ngFor="let item of listItems" class="list-group-item">
 
-                {{ item.name }} ({{ item.amount }})
+                <span class="badge">{{ item.amount }}</span>
 
-            </li>
+                {{ item.name }} 
 
-        </ul>
+            </a>
+
+        </div>
 
     </section>
 
