@@ -1,21 +1,33 @@
 import { Component, EventEmitter } from '@angular/core';
 import { ListItem } from '../shared/list-item.model';
+import { FormGroup, FormControl, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 
 @Component({
     selector: 'shopping-list-add',
     template: `
-        <form>
-            <div class="input">
-                <label for="item-name">Name</label>
-                <input type="text" id="item-name" placeholder="Enter your name" [(ngModel)]="listItem.name">
+        <form class="form-inline" >
+            <div class="form-group">
+                <label for="itemName">Name</label>
+                <input type="text" 
+                    class="form-control" 
+                    id="itemName"
+                    name="itemName" 
+                    placeholder="Jane Doe" 
+                    [(ngModel)]="listItem.name">
             </div>
-            <div class="input">
-                <label for="item-amt">Amount</label>
-                <input type="text" id="item-amt" placeholder="0" [(ngModel)]="listItem.amount">
+            <div class="form-group">
+                <label for="itemAmount">Amount</label>
+                <input type="email" 
+                    class="form-control" 
+                    id="itemAmount" 
+                    name="itemAmount" 
+                    placeholder="£5.00" 
+                    [(ngModel)]="listItem.amount">
             </div>
-            <button (click)="addShoppingItem(listItem)">Add Item</button>
+            <button class="btn btn-default" (click)="addShoppingItem(listItem)">Add Item</button>
         </form>
     `,
+    directives: [ REACTIVE_FORM_DIRECTIVES ],
     outputs: [ 'addRequest' ]
 })
 export class ShoppingListAddComponent {
