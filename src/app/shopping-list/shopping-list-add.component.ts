@@ -5,6 +5,7 @@ import { FormGroup, FormControl, REACTIVE_FORM_DIRECTIVES } from '@angular/forms
 @Component({
     selector: 'shopping-list-add',
     template: `
+        <h3>Add Items</h3>
         <form class="form-inline" >
             <div class="form-group">
                 <label for="itemName">Name</label>
@@ -17,7 +18,7 @@ import { FormGroup, FormControl, REACTIVE_FORM_DIRECTIVES } from '@angular/forms
             </div>
             <div class="form-group">
                 <label for="itemAmount">Amount</label>
-                <input type="email" 
+                <input type="text" 
                     class="form-control" 
                     id="itemAmount" 
                     name="itemAmount" 

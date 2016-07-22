@@ -4,8 +4,13 @@ import { dashboardRoutes }  from './dashboard/dashboard.routes';
 import { AppComponent }  from './app.component';
 
 const appRoutes: RouterConfig = [
-    ...shoppingListRoutes,
-    ...dashboardRoutes
+    {
+        path: '',
+        children: [
+            ...shoppingListRoutes,
+            ...dashboardRoutes
+        ]        
+    }
 ];
 
 export const appRouterProviders = [

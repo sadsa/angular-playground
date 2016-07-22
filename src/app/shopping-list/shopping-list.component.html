@@ -1,39 +1,45 @@
 <div class="jumbotron">
 
-    <h1>Shopping List</h1>
+  <h1>Shopping List</h1>
 
 </div>
 
 <div class="main">
 
-    <section>
+  <section>
 
-        <shopping-list-add (addRequest)="addShoppingItem($event)"></shopping-list-add>
+    <shopping-list-add (addRequest)="addShoppingItem($event)"></shopping-list-add>
 
-    </section>
+  </section>
 
-    <section>
+  <section>
 
-        <h3>My Shopping Items</h3>
+    <h3>My Shopping Items</h3>
+
+    <div class="row">
+
+      <div class="col-md-4">
 
         <div class="list-group">
 
-            <a *ngFor="let item of listItems" class="list-group-item">
+          <a *ngFor="let item of listItems" class="list-group-item">
 
-                <span class="badge">{{ item.amount }}</span>
+            <span class="badge">{{ item.amount }}</span> {{ item.name }}
 
-                {{ item.name }} 
-
-            </a>
+          </a>
 
         </div>
 
-    </section>
+      </div>
 
-    <section>
+    </div>
 
-        <shopping-list-edit></shopping-list-edit>
+  </section>
 
-    </section>
+  <section>
 
-</div>
+    <shopping-list-edit></shopping-list-edit>
+
+  </section>
+
+  </div>
